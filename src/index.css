@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .font-inherit {
+    font-family: inherit; /* Inherit the font from the parent */
+  }
+}
+
+@layer base {
+  blockquote,
+  dl,
+  dd,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  hr,
+  figure,
+  p,
+  pre {
+    @apply m-0;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: inherit;
+    font-weight: inherit;
+  }
+
+  /* Set display block for media elements */
+  img,
+  svg,
+  video,
+  canvas,
+  audio,
+  iframe,
+  embed,
+  object {
+    @apply block; /* Set display to block */
+    vertical-align: middle; /* Additional style not applicable in Tailwind, so use plain CSS */
+  }
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  button,
+  [role="button"] {
+    @apply cursor-pointer; /* Set cursor to pointer */
+  }
+
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    @apply bg-transparent; /* Remove background color */
+    -webkit-appearance: button; /* Reset default button styling */
+    background-image: none; /* Remove background image */
+  }
+
+  button,
+  select {
+    @apply not-italic; /* Prevent text transformation */
+  }
+
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+    @apply font-inherit text-base;
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
+  }
+
+  ol,
+  ul,
+  menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .input-field {
+    @apply w-full outline-2 outline-transparent outline-offset-2 transition duration-150 ease-in-out 
+         rounded-sm border-b-2 border-transparent bg-gray-100 p-4 text-base font-medium leading-6 text-gray-500 
+         focus:outline-none focus:border-gray-300;
+  }
+  .input-field:focus {
+    @apply border-[rgb(74,108,247)];
+  }
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* overflow-anchor: none; */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.navbarToggler > span {
+  transition: all 0.3s ease;
+}
+.navbarTogglerActive > span:nth-child(1) {
+  top: 7px;
+  transform: rotate(45deg);
+}
+
+.navbarTogglerActive > span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbarTogglerActive > span:nth-child(3) {
+  top: -8px;
+  transform: rotate(135deg);
+}
+
